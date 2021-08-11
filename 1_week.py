@@ -48,3 +48,113 @@ if (y % 4 == 0) and (y % 100 != 0) or (y % 400 == 0):
     print('Високосный')
 else:
     print('Обычный')
+
+# Задача 1.12_1
+# Напишите программу, вычисляющую площадь треугольника по переданным длинам трёх его сторон по формуле Герона
+a, b, c = int(input()), int(input()), int(input())
+p = (a + b + c) / 2
+S = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+print(S)
+
+# Задача 1.12_2
+# Напишите программу, принимающую на вход целое число, которая выводит True, если переданное
+# значение попадает в интервал
+# put your python code here
+a = int(input())
+if (12 >= a > -15) or (17 > a > 14) or (a >= 19):
+    print("True")
+else:
+    print("False")
+
+# Задача 1.12_3
+# Напишите простой калькулятор (+, -, /, *, mod, div, pow)
+a, b, oper = float(input()), float(input()), input()
+if oper == '+':
+    print(a + b)
+elif oper == '-':
+    print(a - b)
+elif oper == '*':
+    print(a * b)
+elif oper == 'pow':
+    print(a ** b)
+elif b == 0:
+    print('Деление на 0!')
+elif oper == 'div':
+    print(a // b)
+elif oper == '/':
+    print(a / b)
+elif oper == 'mod':
+    print(a % b)
+
+# Задача 1.12_4
+# Вычисление площади по фигуре
+s = input()
+if s == 'прямоугольник':
+    a, b = float(input()), float(input())
+    print(a * b)
+elif s == 'треугольник':
+    a, b, c = float(input()), float(input()), float(input())
+    p = (a + b + c) / 2
+    print((p * (p - a) * (p - b) * (p - c)) ** 0.5)
+else:
+    r = int(input())
+    print(float(3.14 * r * r))
+
+# Задача 1.12_5
+# Напишите программу, которая получает на вход три целых числа, по одному числу в строке,
+# и выводит на консоль в три строки сначала максимальное, потом минимальное, после чего оставшееся число.
+a, b, c = int(input()), int(input()), int(input())
+if a > b > c:
+    print(a)
+    print(c)
+    print(b)
+elif b > c > a:
+    print(b)
+    print(a)
+    print(c)
+elif a > c > b:
+    print(a)
+    print(b)
+    print(c)
+elif b > a > c:
+    print(b)
+    print(c)
+    print(a)
+elif c > b > a:
+    print(c)
+    print(a)
+    print(b)
+elif c > a > b:
+    print(c)
+    print(b)
+    print(a)
+elif a == b > c:
+    print(a)
+    print(c)
+    print(b)
+elif b == c > a:
+    print(b)
+    print(a)
+    print(c)
+elif c == a > b:
+    print(a)
+    print(b)
+    print(c)
+elif a == b < c:
+    print(c)
+    print(a)
+    print(b)
+elif b == c < a:
+    print(a)
+    print(b)
+    print(c)
+elif c == a < b:
+    print(b)
+    print(a)
+    print(c)
+else:
+    print(a)
+    print(b)
+    print(c)
+
+# Задача 1.12_6
