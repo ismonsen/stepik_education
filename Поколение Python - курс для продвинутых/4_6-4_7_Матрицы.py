@@ -240,3 +240,88 @@ for row in range(n):
     for col in range(m):
         print(str(matrix[row][col]).ljust(3), end='')
     print()
+
+# Задача 4_7.1
+"""
+Напишите программу для вычисления суммы двух матриц.
+На вход программе подаются два натуральных числа n и m — количество строк и столбцов 
+в матрицах, затем элементы первой матрицы, затем пустая строка, далее следуют элементы второй матрицы.
+2 4
+1 2 3 4
+5 6 7 1
+
+3 2 1 2
+1 3 1 3
+--->>>
+4 4 4 6
+6 9 8 4
+"""
+n, m = map(int, input().split())
+m1 = [[int(i) for i in input().split()] for _ in range(n)]
+input()
+m2 = [[int(i) for i in input().split()] for _ in range(n)]
+for row in range(n):
+    for col in range(m):
+        x = m1[row][col] + m2[row][col]
+        print(x, end=' ')
+    print()
+# Задача 4_7.2
+"""
+Напишите программу, которая перемножает две матрицы.
+На вход программе подаётся натуральное число nn — количество строк и столбцов в матрице, затем элементы матрицы, 
+На вход программе подаются два натуральных числа n и m — количество строк и столбцов в первой матрице, затем элементы 
+первой матрицы, затем пустая строка. Далее следуют числа m и k — количество строк и столбцов второй матрицы затем 
+элементы второй матрицы.
+2 2
+1 2
+3 2
+
+2 2
+3 2
+1 1
+--->>>
+5 4
+11 8
+"""
+n, m = map(int, input().split())
+m1 = [[int(i) for i in input().split()] * m for _ in range(n)]
+input()
+m, k = map(int, input().split())
+m2 = [[int(i) for i in input().split()] * m for _ in range(m)]
+m3 = [[0] * k for i in range(n)]
+for i in range(n):
+    for j in range(k):
+        for r in range(m):
+            m3[i][j] += m1[i][r] * m2[r][j]
+for row in m3:
+    print(*row)
+    
+# Задача 4_7.3
+"""
+Напишите программу, которая возводит квадратную матрицу в m-ую степень.
+На вход программе подаётся натуральное число n — количество строк и столбцов в матрице, затем элементы матрицы, 
+затем натуральное число m.
+3
+1 2 3
+4 5 6
+7 8 9
+2
+--->>>
+30 36 42
+66 81 96
+102 126 150
+"""
+n = int(input())
+mat = [[int(i) for i in input().split()] for _ in range(n)]
+m = int(input())
+mat2 = mat.copy()
+for _ in range(m-1):
+    mat3 = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for r in range(n):
+                mat3[i][j] += mat2[i][r] * mat[r][j]
+    mat2 = mat3.copy()
+for row in mat2:
+    print(*row)
+
